@@ -1,13 +1,13 @@
 "use client";
 import ClassNames from "embla-carousel-class-names";
 import AutoPlay from "embla-carousel-autoplay";
-import { UseEmblaCarouselType } from "embla-carousel-react";
+import { UseEmblaCarouselType } from "embla-carousel-react"; // Correct import for the type
 import useEmblaCarousel from "embla-carousel-react";
 import React, { ReactNode, useCallback, useEffect, useState } from "react";
 import styles from "@/styles/carousel.module.css";
 
 interface ContextValue {
-  embla: UseEmblaCarouselType | undefined;
+  embla: UseEmblaCarouselType | undefined; // Use the correct type for the emblaApi
   selectedIndex: number;
 }
 
