@@ -1,7 +1,8 @@
-import React from "react";
+import React, { JSX } from "react";
 
 interface Props {
   by: string;
+  children: JSX.Element;
 }
 
 const Review: React.FC<Props> = ({ children, by }) => (
