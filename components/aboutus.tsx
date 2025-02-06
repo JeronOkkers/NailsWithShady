@@ -31,7 +31,7 @@ const AboutUs: React.FC = () => {
             <Member
               id="Linktree"
               name="Linktree"
-              socialId="Linktree"
+              socialId="@Linktree"
               link="https://linktr.ee/nailswithshady"
             />
             <Member
