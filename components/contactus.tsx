@@ -3,8 +3,17 @@ import React, { useState, useCallback } from "react";
 import Image from "next/image";
 import axios from "axios";
 
+interface Status {
+  submitted: boolean;
+  submitting: boolean;
+  info: {
+    error: boolean;
+    msg: string | null;
+  };
+}
+
 const ContactUs: React.FC = () => {
-  const [status, setStatus] = useState({
+  const [status, setStatus] = useState<Status>({
     submitted: false,
     submitting: false,
     info: { error: false, msg: null },
@@ -31,26 +40,29 @@ const ContactUs: React.FC = () => {
     [],
   );
 
-  const handleServerResponse = useCallback((ok, msg) => {
-    if (ok) {
-      setStatus({
-        submitted: true,
-        submitting: false,
-        info: { error: false, msg },
-      });
-      setInputs({
-        clientNames: "",
-        email: "",
-        message: "",
-      });
-    } else {
-      setStatus({
-        submitted: false,
-        submitting: false,
-        info: { error: true, msg },
-      });
-    }
-  }, []);
+  const handleServerResponse = useCallback(
+    (ok: boolean, msg: string | null) => {
+      if (ok) {
+        setStatus({
+          submitted: true,
+          submitting: false,
+          info: { error: false, msg },
+        });
+        setInputs({
+          clientNames: "",
+          email: "",
+          message: "",
+        });
+      } else {
+        setStatus({
+          submitted: false,
+          submitting: false,
+          info: { error: true, msg },
+        });
+      }
+    },
+    [],
+  );
 
   const handleSubmit = useCallback(
     (e: React.FormEvent<HTMLFormElement>) => {
