@@ -1,4 +1,3 @@
-"use client";
 import React, { useState, useCallback } from "react";
 import Image from "next/image";
 import axios from "axios";
@@ -15,18 +14,21 @@ const ContactUs: React.FC = () => {
     message: "",
   });
 
-  const handleOnChange = useCallback((e) => {
-    e.persist();
-    setInputs((prev) => ({
-      ...prev,
-      [e.target.id]: e.target.value,
-    }));
-    setStatus({
-      submitted: false,
-      submitting: false,
-      info: { error: false, msg: null },
-    });
-  }, []);
+  const handleOnChange = useCallback(
+    (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+      e.persist();
+      setInputs((prev) => ({
+        ...prev,
+        [e.target.id]: e.target.value,
+      }));
+      setStatus({
+        submitted: false,
+        submitting: false,
+        info: { error: false, msg: null },
+      });
+    },
+    [],
+  );
 
   const handleServerResponse = useCallback((ok, msg) => {
     if (ok) {
@@ -50,7 +52,7 @@ const ContactUs: React.FC = () => {
   }, []);
 
   const handleSubmit = useCallback(
-    (e) => {
+    (e: React.FormEvent<HTMLFormElement>) => {
       e.preventDefault();
       setStatus((prevStatus) => ({ ...prevStatus, submitting: true }));
       axios({
@@ -68,12 +70,12 @@ const ContactUs: React.FC = () => {
   );
 
   return (
-    <div className="bg-black text-white flex flex-col  justify-center pt-2 min-h-screen ">
+    <div className="bg-black text-white flex flex-col justify-center pt-2 min-h-screen">
       <div className="flex-1 flex flex-col justify-center items-center pt-10 lg:pt-6">
         <div className="pb-10">
           <Image src="/logo.svg" width={30} height={30} alt="logo" />
         </div>
-        <h2 className="text-4xl font-bold ">Contact Us</h2>
+        <h2 className="text-4xl font-bold">Contact Us</h2>
         <form
           onSubmit={handleSubmit}
           className="flex flex-col gap-4 mt-16 px-10 lg:mt-20 min-w-full lg:min-w-[500px]"
