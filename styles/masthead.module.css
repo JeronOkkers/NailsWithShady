@@ -1,0 +1,14 @@
+.video-purple {
+  filter: hue-rotate(270deg) saturate(1.2); /* Adjusts color to purple */
+}
+
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(128, 0, 128, 0.3); /* Soft purple tint */
+  mix-blend-mode: multiply;
+  pointer-events: none;
+}
