@@ -24,8 +24,8 @@ const SizeObserver: React.FC<SizeObserverProps> = ({ children }) => {
     // Initialize the innerWidth state immediately.
     handleResize();
 
-    // Define the event listener options in a constant to use the same reference.
-    const eventOptions = { passive: true };
+    // Define the event listener options including capture: false.
+    const eventOptions = { passive: true, capture: false };
 
     window.addEventListener("resize", handleResize, eventOptions);
     return () => {
