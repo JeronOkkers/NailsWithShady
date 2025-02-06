@@ -29,7 +29,7 @@ const AboutUs: React.FC = () => {
               link="https://www.tiktok.com/@nailswithshady"
             />
             <Member
-              id="Linktree"
+              id="linktree"
               name="Linktree"
               socialId="@Linktree"
               link="https://linktr.ee/nailswithshady"
