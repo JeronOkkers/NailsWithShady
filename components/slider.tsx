@@ -4,6 +4,7 @@ import useAnimationFrame from "@/utils/use-animation-frame";
 import React, { useRef, useContext, useCallback } from "react";
 
 interface Props {
+  children: React.ReactNode; // Added children explicitly
   initialOffsetX: number;
   className: string;
   contentWidth: number;
@@ -53,6 +54,7 @@ const SliderContainer: React.FC<Props> = ({
 
 interface ItemsProps {
   width: number;
+  children: React.ReactNode;
 }
 
 export const SliderItem: React.FC<ItemsProps> = ({ children, width }) => (
@@ -63,4 +65,5 @@ export const SliderItem: React.FC<ItemsProps> = ({ children, width }) => (
     {children}
   </div>
 );
+
 export default SliderContainer;
