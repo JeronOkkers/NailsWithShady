@@ -3,7 +3,8 @@ import React, { useContext, useRef } from "react";
 import s from "../styles/skills.module.css";
 import { ScrollContext } from "@/utils/scroll-observer";
 
-const opacityForBlock = (sectionProgress, blockNo) => {
+// Added explicit types to parameters and return type
+const opacityForBlock = (sectionProgress: number, blockNo: number): number => {
   const progress = sectionProgress - blockNo;
   if (progress >= 0 && progress < 1) return 1;
   return 0.2;
@@ -11,7 +12,7 @@ const opacityForBlock = (sectionProgress, blockNo) => {
 
 const Skills = () => {
   const { scrollY } = useContext(ScrollContext);
-  const refContainer = useRef(null);
+  const refContainer = useRef<HTMLDivElement>(null);
 
   const numOfPages = 3;
   let progress = 0;
@@ -44,7 +45,7 @@ const Skills = () => {
 
               <h2 className="font-bold text-purple-300 mt-6">Location</h2>
               <p>22 Duine Str, Scottsville, Kraaifontein</p>
-            </div>{" "}
+            </div>
           </div>
           <span
             className={`${s.skillText} inline-block after:content-['_']`}
@@ -54,7 +55,7 @@ const Skills = () => {
               <h2 className="font-bold text-purple-300">Price List</h2>
               <p>Gel Overlay + Gel Colour: R100</p>
               <p>Kids Gel Overlay + Gel Colour: R100</p>
-            </div>{" "}
+            </div>
           </span>
           <span
             className={`${s.skillText} inline-block text-center mt-10`}
