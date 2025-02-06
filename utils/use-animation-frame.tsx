@@ -2,7 +2,10 @@
 import { useCallback, useRef, useEffect } from "react";
 
 const useAnimationFrame = (enabled: boolean, callback: () => void) => {
-  const requestRef = useRef<ReturnType<typeof requestAnimationFrame>>();
+  // Initialize the ref with null and update the type to include null.
+  const requestRef = useRef<ReturnType<typeof requestAnimationFrame> | null>(
+    null,
+  );
 
   const animate = useCallback(() => {
     callback();
@@ -14,7 +17,7 @@ const useAnimationFrame = (enabled: boolean, callback: () => void) => {
       requestRef.current = requestAnimationFrame(animate);
       return () => {
         if (requestRef.current) {
-          return cancelAnimationFrame(requestRef.current);
+          cancelAnimationFrame(requestRef.current);
         }
       };
     }
