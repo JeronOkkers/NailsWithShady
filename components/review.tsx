@@ -1,8 +1,8 @@
-import React, { JSX } from "react";
+import React from "react";
 
 interface Props {
   by: string;
-  children: JSX.Element;
+  children: React.ReactNode; // Allow strings, numbers, or elements
 }
 
 const Review: React.FC<Props> = ({ children, by }) => (
