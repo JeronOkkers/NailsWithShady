@@ -57,7 +57,7 @@ const ContactUs: React.FC = () => {
         method: "POST",
         url: process.env.NEXT_PUBLIC_CONTACT_FORM_ENDPOINT_URL,
         data: inputs,
-      }).then((_response) => {
+      }).then(() => {
         handleServerResponse(
           true,
           "Thank you, your message has been submitted",
