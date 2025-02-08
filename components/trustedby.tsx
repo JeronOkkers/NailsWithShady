@@ -12,7 +12,7 @@ const TrustedBy: React.FC = () => (
       <h3 className="text-xl mb-10 font-bold text-center">
         <span className="whitespace-nowrap">Trusted By</span>{" "}
         <span className="whitespace-nowrap">
-          everyone who loves good nails at affordable prices
+          Those who loves good nails at affordable prices
         </span>
       </h3>
       <ClientLogos />

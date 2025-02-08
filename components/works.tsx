@@ -30,7 +30,7 @@ const Works = () => (
             </WorkLeft>
             <WorkRight progress={progress}>
               <Image
-                src="/nails/nail1.jpeg"
+                src="/nails/nails18.jpeg"
                 layout="responsive"
                 width={840}
                 height={1620}
@@ -56,7 +56,7 @@ const Works = () => (
             </WorkLeft>
             <WorkRight progress={progress}>
               <Image
-                src="/nails/nail2.jpeg"
+                src="/nails/nails19.jpeg"
                 layout="responsive"
                 width={840}
                 height={1620}
@@ -82,7 +82,7 @@ const Works = () => (
             </WorkLeft>
             <WorkRight progress={progress}>
               <Image
-                src="/nails/nail3.jpeg"
+                src="/nails/nails20.jpeg"
                 layout="responsive"
                 width={840}
                 height={1620}
